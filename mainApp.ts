@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors"
+import router from "./router/Route";
 
 export const mainApp = (app: Application) => {
     app.use(express.json())
@@ -15,4 +16,5 @@ export const mainApp = (app: Application) => {
             })
         }
     })
+    app.use("/api/v1/", router)
 }
